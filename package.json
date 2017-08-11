@@ -4,10 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^15.6.1",
-    "react-bootstrap": "^0.31.2",
-    "react-bootstrap-dropdown": "^0.3.0",
-    "react-bootstrap-dropdown-menu": "^1.1.11",
-    "react-bootstrap-select": "^0.14.0",
+    "react-bootstrap": "^0.31.2",    
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.10"
   },

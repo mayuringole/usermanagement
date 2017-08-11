@@ -67,9 +67,15 @@ class App extends Component {
   
         var newRowData = this.state.data;
         newRowData.push({firstName: firstText, lastName: lastText, state: stateText, city: cityText, email:emailText});
+        
+
         this.setState({
             data:newRowData
         });
+
+
+
+
     }
 
     updateEmployee(index,firstText,lastText,stateText,cityText,emailText){
@@ -89,6 +95,8 @@ class App extends Component {
         this.setState({
             data: tempData
         });
+
+
     }
 
     deleteEmployee(index,nameText,desigText,dojText){
@@ -152,7 +160,9 @@ var heading = this.state.title.map((head)=>
                       <div>
                       <Tabs defaultActiveKey={1} animation={false} id="noanim-tab-example">
                         <Tab eventKey={1} title="Add User">
-                        <App2 getEmployeeInfo = {this.getEmployee.bind(this)}/>
+
+                          <App2 details={this.state.details} getEmployeeInfo = {this.getEmployee.bind(this)}/>
+
                          <h3>List of Employees</h3>                        
                         <Table striped bordered condensed hover>
                           <thead>

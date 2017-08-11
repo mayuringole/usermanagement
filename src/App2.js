@@ -24,27 +24,30 @@ export class App2 extends Component {
   
     buttonClicked() {
 
-        var string = (this.state.Email);
-        var status = string.includes("@");
+        var emailName = (this.state.Email);
+        var status = emailName.includes("@")
+        var fName = (this.state.FirstName);
+        var lName =  (this.state.LastName);
+        var stateName = (this.state.State);
+        var cityName =  (this.state.City);
       
-        if(status)
+        if(fName != "" && lName != "" && stateName != "" && cityName != "" && emailName != "" && status == true)
         {
             console.log('Button was clicked!');
             console.log(this.state.FirstName);
             this.props.getEmployeeInfo(this.state.FirstName, this.state.LastName, this.state.State, this.state.City,this.state.Email);
-      
-            delete this.state.FirstName;
-            this.setState(this.state);
+            
+            //delete this.state.FirstName;
+            //this.setState(this.state);
         }
         else
-        {alert("Please provide valid email");}
+        {
+          alert("Please check the inputes");
+          
+        }
       
     }
 
-    getEmailValidationState(){
-        console.log("I am in getEmailValidationState");
-          
-    }
   
     GetStates(event){
         let stateName = event.target.value;
@@ -106,22 +109,23 @@ export class App2 extends Component {
         </FormControl> 
         </Col>
       </FormGroup>
-      <FormGroup controlId="formHorizontalCities">
+      <FormGroup controlId="formHorizontalCities" >
         <Col componentClass={ControlLabel} sm={2}>
           City
         </Col>
         <Col sm={5}>      
-        <FormControl componentClass="select" onChange={e => this.setState({City: e.target.value})}>      
+        <FormControl componentClass="select" onChange={e => this.setState({City: e.target.value})}> 
+        <option>Select</option>     
           {MyCities}
         </FormControl> 
         </Col>
       </FormGroup>    
-      <FormGroup controlId="formHorizontalEmail" validationState={this.getEmailValidationState()}>
+      <FormGroup controlId="formHorizontalEmail">
         <Col componentClass={ControlLabel} sm={2}>
          Email
         </Col>
         <Col sm={5}>
-          <FormControl type="text" placeholder="Email" ref="emailText" onChange={e => this.setState({Email: e.target.value})} />
+          <FormControl type="text" placeholder="name@email.com" ref="emailText" onChange={e => this.setState({Email: e.target.value})} />
         </Col>
       </FormGroup>
 
