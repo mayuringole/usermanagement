@@ -19,15 +19,6 @@ class App extends Component {
                 state: "Maharashtra",
                 city: "Amravati",
                 email: "mayur@gmail.com"
-            }, 
-
-            {
-                firstName:"Rishabh", 
-                lastName:"Gupta", 
-                state: "Maharashtra",
-                city: "Pune",
-                email:"rishabh@gmail.com"
-
             }],
     
 
@@ -124,7 +115,7 @@ var heading = this.state.title.map((head)=>
 
     var loginPage = (
                          <div>                    
-                        <h1>Employee Login</h1>
+                        <h2>Employee Login </h2>
 
                         <Form horizontal>
                       <FormGroup controlId="formHorizontalEmail" >
@@ -152,14 +143,13 @@ var heading = this.state.title.map((head)=>
                           </Button>
                         </Col>
                       </FormGroup>
+                      <p>NOTE :- Please Use UserName : (Mayur) & Password: (Mayur) as I have not used backend.</p>
                       </Form>                    
                         </div>
 
                 );
     var mainPage = (
-                      <div>
-                      <Tabs defaultActiveKey={1} animation={false} id="noanim-tab-example">
-                        <Tab eventKey={1} title="Add User">
+                      <div>                     
 
                           <App2 details={this.state.details} getEmployeeInfo = {this.getEmployee.bind(this)}/>
 
@@ -178,27 +168,7 @@ var heading = this.state.title.map((head)=>
                                     
                           </tbody>
                         </Table> 
-                    </Tab>
-                    <Tab eventKey={2} title="Search & Update"> 
-                      <h3>List of Employees</h3>                        
-                      <Table striped bordered condensed hover>
-                          <thead>
-                          <tr>
-                          
-                          {heading}
-                          
-                          </tr>
-                          </thead>
-                          <tbody>
-                                    
-                          {persons}
-                                    
-                          </tbody>
-                      </Table>   
-                      
-                    </Tab>
-                    
-                  </Tabs> 
+                   
                   </div>
                );
 

@@ -31,18 +31,23 @@ export class App2 extends Component {
         var stateName = (this.state.State);
         var cityName =  (this.state.City);
       
-        if(fName != "" && lName != "" && stateName != "" && cityName != "" && emailName != "" && status == true)
+        if(fName != "" && lName != "" && stateName != "" && cityName != "" && emailName != "")
         {
+          if(status == true)
+          {
             console.log('Button was clicked!');
             console.log(this.state.FirstName);
             this.props.getEmployeeInfo(this.state.FirstName, this.state.LastName, this.state.State, this.state.City,this.state.Email);
-            
-            //delete this.state.FirstName;
-            //this.setState(this.state);
+          }
+          else
+          {
+            alert("Email must contain @");
+          }
+          
         }
         else
         {
-          alert("Please check the inputes");
+          alert("Fields can not be empty.");
           
         }
       
